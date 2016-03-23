@@ -45,16 +45,20 @@ namespace FPRLogoViewer
 			// open a logo item
 			OpenFileDialog ofd = new OpenFileDialog();
 			ofd.Title = "Select Logo File...";
-			ofd.Filter = "PCSX2 Memory Card/Fire Pro Returns save exports|*.psu|Binary rips|*.bin|All Files|*.*";
+			ofd.Filter = "Memory Linker|*.psu|Raw Save Data|BISLPM-66082;BASLUS-21702;BESLES-55041|Binary rips|*.bin|All Files|*.*";
 			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
 				// ok cool open the file please, based on filetype
 				if (ofd.FileName.EndsWith(".psu")) {
-					// handle FPR save ripped with MyMC
-					LoadFPRSave(ofd.FileName);
+					// handle .psu FPR save
+					LoadFPRSave_PSU(ofd.FileName);
+				}
+				else if(ofd.FileName.EndsWith(".bin")){
+					// .bin = pre-ripped logo
+					LoadRippedLogo(ofd.FileName);
 				}
 				else {
-					// handle pre-ripped logo
-					LoadRippedLogo(ofd.FileName);
+					// assume raw save file
+					LoadFPRSave_Raw(ofd.FileName);
 				}
 			}
 		}
@@ -69,7 +73,8 @@ namespace FPRLogoViewer
 			}
 		}
 
-		private void LoadFPRSave(string inFile) {
+		/* Load .psu format save */
+		private void LoadFPRSave_PSU(string inFile) {
 			// reset array
 			for (int i = 0; i < validLogos.Length; i++) {
 				validLogos[i] = false;
@@ -83,7 +88,7 @@ namespace FPRLogoViewer
 			}
 
 			/* look for valid logos in save file */
-			/* each logo is 16,656 bytes. logos in .psu files start at 0xC6010 */
+			/* a typical logo is 16,656 bytes (0x4110). logos in .psu files start at 0xC6010 */
 			for (int i = 0; i < 6; i++) {
 				saveFile.Seek(0xC6010 + (i*16656), SeekOrigin.Begin);
 				//read first byte; it will be 1 if a logo exists in this slot.
@@ -105,8 +110,13 @@ namespace FPRLogoViewer
 
 			// ask which logo to load
 			int saveFileLogoNum = 0;
-			if (selector.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+			DialogResult d = selector.ShowDialog();
+			if (d == System.Windows.Forms.DialogResult.OK) {
 				saveFileLogoNum = selector.selectedIndex;
+			}
+			else if (d == System.Windows.Forms.DialogResult.Cancel) {
+				saveFile.Close();
+				return;
 			}
 
 			// skip first 0x10 bytes
@@ -118,6 +128,62 @@ namespace FPRLogoViewer
 			statusLabel.Text = String.Format("Loaded logo #{0}", saveFileLogoNum+1);
 		}
 
+		/* load raw FPR save (e.g. BISLPM-66082, BASLUS-21702, BESLES-55041) */
+		private void LoadFPRSave_Raw(string inFile) {
+			// reset array
+			for (int i = 0; i < validLogos.Length; i++) {
+				validLogos[i] = false;
+			}
+
+			// try loading save file
+			FileStream saveFile = new FileStream(inFile, FileMode.Open);
+			if (saveFile == null) {
+				MessageBox.Show(String.Format("Unable to open {0}", inFile));
+				return;
+			}
+
+			/* look for valid logos in save file */
+			/* a typical logo is 16,656 bytes (0x4110). logos in raw saves start at 0xC5810 */
+			for (int i = 0; i < 6; i++) {
+				saveFile.Seek(0xC5810 + (i * 16656), SeekOrigin.Begin);
+				//read first byte; it will be 1 if a logo exists in this slot.
+				validLogos[i] = saveFile.ReadByte() == 1 && true || false;
+			}
+
+			// modify entries in the selector
+			LogoDialog selector = new LogoDialog();
+			string s = "";
+			for(int i = 0; i < 6; i++){
+				if(validLogos[i]){
+					s = "Logo Exists";
+				}
+				else{
+					s = "No Logo";
+				}
+				selector.listboxLogos.Items[i] = String.Format("Logo {0} ({1})",i+1,s);
+			}
+
+			// ask which logo to load
+			int saveFileLogoNum = 0;
+			DialogResult d = selector.ShowDialog();
+			if (d == System.Windows.Forms.DialogResult.OK) {
+				saveFileLogoNum = selector.selectedIndex;
+			}
+			else if (d == System.Windows.Forms.DialogResult.Cancel) {
+				saveFile.Close();
+				return;
+			}
+
+			// skip first 0x10 bytes
+			saveFile.Seek(0xC5810 + (saveFileLogoNum * 16656) + 0x10, SeekOrigin.Begin);
+			ReadPalette(saveFile);
+			ReadPixels(saveFile);
+			saveFile.Close(); // we don't need the file to be open anymore.
+			UpdateImage();
+			statusLabel.Text = String.Format("Loaded logo #{0}", saveFileLogoNum+1);
+		}
+
+		/* load .bin format ripped logo */
 		private void LoadRippedLogo(string inFile) {
 			// the logo is pre-ripped and assumed to exist
 			FileStream f = new FileStream(inFile, FileMode.Open);
@@ -212,7 +278,14 @@ namespace FPRLogoViewer
 			// 1) convert logoData to bitmap
 			for (int y = 0; y < 128; y++) {
 				for (int x = 0; x < 128; x++) {
-					logoBitmap.SetPixel(x,y,logoPalette[logoData[(y*128)+x]]);
+					int pixelLoc = (y * 128) + x;
+					if (logoData[pixelLoc] < 0x3F) {
+						logoBitmap.SetPixel(x, y, logoPalette[logoData[pixelLoc]]);
+					}
+					else {
+						string note = String.Format("Unexpected value 0x{3:X2} at x={0:D},y={1:D}; file location=0x{2:X4}", x, y, pixelLoc, logoData[pixelLoc]);
+						MessageBox.Show(note, "Unexpected Value", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					}
 				}
 			}
 			// 2) draw to image
@@ -221,10 +294,14 @@ namespace FPRLogoViewer
 
 		private void picboxLogo_MouseMove(object sender, MouseEventArgs e) {
 			// find cursor location
-			int xLoc = e.X - picboxLogo.ClientRectangle.Left;
-			int yLoc = e.Y - picboxLogo.ClientRectangle.Top;
-			statusLabel.Text = String.Format("X:{0:D3}/127,Y:{1:D3}/127,V:0x{2:X2}/{2:D3}", xLoc, yLoc, logoData[(yLoc * 128) + xLoc]);
-			panelCursorColor.BackColor = logoPalette[logoData[(yLoc * 128) + xLoc]];
+			int xLoc = Math.Min(e.X - picboxLogo.ClientRectangle.Left,127);
+			int yLoc = Math.Min(e.Y - picboxLogo.ClientRectangle.Top,127);
+			int pixelLoc = (yLoc * 128) + xLoc;
+			statusLabel.Text = String.Format("X:{0:D3}/127,Y:{1:D3}/127,V:0x{2:X2}/{2:D3}", xLoc, yLoc, logoData[pixelLoc]);
+			// only change color for valid palette indexes
+			if (logoData[pixelLoc] < 0x3F) {
+				panelCursorColor.BackColor = logoPalette[logoData[pixelLoc]];
+			}
 		}
 
 		private void cboxColorTable_SelectedIndexChanged(object sender, EventArgs e) {
@@ -235,7 +312,11 @@ namespace FPRLogoViewer
 			// change active color in color set to the color under the cursor
 			int xLoc = e.X - picboxLogo.ClientRectangle.Left;
 			int yLoc = e.Y - picboxLogo.ClientRectangle.Top;
-			cboxColorTable.SelectedIndex = logoData[(yLoc * 128) + xLoc];
+			int pixelLoc = (yLoc * 128) + xLoc;
+			// only change color for valid palette indexes
+			if (logoData[pixelLoc] < 0x3C) {
+				cboxColorTable.SelectedIndex = logoData[pixelLoc];
+			}
 		}
 	}
 }
