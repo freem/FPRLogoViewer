@@ -21,13 +21,13 @@ time, mark, audio, video {
 }
 
 /* undo resetting */
-p{ line-height: 1.25em; }
+p{ line-height: 1.25em; margin-top:0.25em; margin-bottom:0.25em; }
 small{ font-size:80%; }
 em{ font-style:italic; }
 strong{ font-weight:bold; }
 
 h1{ font-size:150%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
-h2{ font-size:133%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h2{ font-size:135%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
 h3{ font-size:125%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
 h4{ font-size:112%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
 h5{ font-size:106%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
@@ -45,11 +45,15 @@ ul{ margin-left:2em; }
 	border-bottom: 1px solid #000;
 }
 
+#header h1{
+	font-size:200%;
+}
+
 #tagline{
 	font-size: 120%;
-	padding-left: 0.5em;
+	padding-left: 0.75em;
 	position: relative;
-	top: -0.25em;
+	top: -0.33em;
 }
 
 #main{
