@@ -1,0 +1,9 @@
+# visual studio user files
+*.suo
+*.user
+
+# object files
+FPRLogoViewer/obj/*
+
+# binaries
+FPRLogoViewer/bin/*
