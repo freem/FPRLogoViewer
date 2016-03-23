@@ -1,0 +1,71 @@
+/* some resetting */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* undo resetting */
+p{ line-height: 1.25em; }
+small{ font-size:80%; }
+em{ font-style:italic; }
+strong{ font-weight:bold; }
+
+h1{ font-size:150%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h2{ font-size:133%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h3{ font-size:125%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h4{ font-size:112%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h5{ font-size:106%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h6{ font-size:100%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+
+ol{ margin-left:2em; }
+ul{ margin-left:2em; }
+
+/* specific stuff */
+#header {
+	background-color: #eee;
+	padding-left:1em;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	border-bottom: 1px solid #000;
+}
+
+#tagline{
+	font-size: 120%;
+	padding-left: 0.5em;
+	position: relative;
+	top: -0.25em;
+}
+
+#main{
+	width: 90%;
+	margin-top:1.5em;
+	margin-bottom:1.5em;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#footer{
+	font-size: 95%;
+	background-color:#eee;
+	text-align:center;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #777;
+}
