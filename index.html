@@ -7,7 +7,7 @@
 
 <body>
 <div id="header">
-<h1>FPRLogoViewer</h1>
+<h1><a href="https://github.com/freem/FPRLogoViewer/">FPRLogoViewer</a></h1>
 <span id="tagline">Fire Pro Wrestling Returns Logo Viewer</span>
 </div>
 
@@ -15,14 +15,18 @@
 <h2>Introduction</h2>
 <p>FPRLogoViewer allows you to view logos from Fire Pro Wrestling Returns save data.</p>
 
-<h2>Requirements</h2>
+<hr class="midline" />
+
+<h3>Requirements</h3>
 <ul>
 <li>.NET Framework v2.0 (so it should hopefully work in Wine)</li>
 </ul>
 
-<h2>Supported Formats</h2>
+<hr class="midline" />
+
+<h3>Supported File Formats</h3>
 <p>There are a myriad of PS2 save formats out there, and FPRLogoViewer only
-supports a few of them.</p>
+supports a few of them (as well as raw logo rips).</p>
 <ul>
 <li><strong>EMS Memory Linker</strong> (.psu) &ndash; A single game save, 952,320 bytes in length.</li>
 <li>
@@ -39,28 +43,55 @@ supports a few of them.</p>
 ripped from a save file.</li>
 </ul>
 
+<hr />
+
 <h2>Usage</h2>
-<p>(todo)</p>
+<p>The program is pretty straightforward; the hardest part will be getting the
+Fire Pro Returns save data, which is beyond the scope of this guide.</p>
 
 <h3>Default View</h3>
-<img src="program_init.png" title="Default View" />
-<p>The default view upon starting the program.</p>
+<img src="program_init.png" title="Default View" alt="A picture of the program after being launched. There are three sections in the main form. The leftmost section is a gray box, where the logo image gets loaded. The middle section contains the Cursor Color. The rightmost section contains the Color Table, which has a drop-down box." />
+<p>The default view upon starting the program. There are three sections, laid out
+in a row.</p>
 
-<h3>Open Logo</h3>
+<h4>Logo Image</h4>
+<p>The leftmost box is where the logo image will appear. Move the mouse cursor
+inside of the box to see more information on the status bar, as well as see the
+color in the Cursor Color section. Clicking inside of the box will change the
+active color table index.</p>
+
+<h4>Cursor Color</h4>
+<p>The middle section shows you what color is under your cursor when it's in the
+Logo Image box.</p>
+
+<h4>Color Table</h4>
+<p>The rightmost box contains the Color Table. Each logo has 64 possible colors.
+You can either change the active value in the drop-down box, or click on a pixel
+in the Logo Image area.</p>
+
+<h4>Open Logo</h4>
 <p>The File &rarr; Open menu item allows you to open a supported file format
 containing one or more Fire Pro Wrestling Returns logos.</p>
 
-<h3>Save Logo</h3>
+<h5>Select Logo</h5>
+<img src="dialog_selectlogo.png" title="Select Logo dialog" alt="The Select Logo dialog contains a list of six items, 'Logo 1' to 'Logo 6', giving the status of each logo as 'Logo Exists' or 'No Logo'. (In this instance, the first five logos are filled (marked 'Logo Exists'), and Logo 6 is marked 'No Logo'.) Below the listbox are two buttons, 'OK' and 'Cancel'." />
+<p>When opening a save file, you can choose what logo is loaded. The entries will
+have "Logo Exists" if a logo exists in the slot or "No Logo" if a logo is not present.</p>
+
+<h4>Save Logo</h4>
 <p>The File &rarr; Save menu item allows you to export the logo to a PNG file.</p>
 
-<h3>Logo View</h3>
-<img src="program_view.png" title="Logo View" />
-<p>When a logo is loaded,</p>
+<hr class="midline" />
 
-<h3>Select Logo</h3>
-<p>When opening a save file, you can choose what logo is loaded.</p>
-<img src="dialog_selectlogo.png" title="Select Logo dialog" alt="The Select Logo dialog contains a list of six items, 'Logo 1' to 'Logo 6', giving the status of each logo as 'Logo Exists' or 'No Logo'. (In this instance, the first five logos are filled (marked 'Logo Exists'), and Logo 6 is marked 'No Logo'.) Below the listbox are two buttons, 'OK' and 'Cancel'." />
-<p>&nbsp;</p>
+<h3>Logo View</h3>
+<img src="program_view.png" title="Logo View" alt="A picture of the program after a logo is loaded. The leftmost area now has a logo, or in this case, a checkerboard pattern in the upper left hand corner. The cursor is over a transparent color, so the middle section's color swatch is the same color as the form. The rightmost section has color number 1, #FFFFFF/white active." />
+<p>Upon opening/selecting a logo, the image will be loaded into the box, and the
+color table will be populated.</p>
+
+<hr />
+
+<h2>License</h2>
+<p>This program is released under the terms of the <a href="https://raw.githubusercontent.com/freem/FPRLogoViewer/master/LICENSE">MIT License</a>.</p>
 
 </div>
 
