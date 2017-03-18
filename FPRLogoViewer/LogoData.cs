@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Text;
 
@@ -11,13 +12,18 @@ namespace FPRLogoViewer
 	/// <summary>
 	/// Fire Pro Wrestling Returns Logo data.
 	/// </summary>
-	class LogoData
+	public class LogoData
 	{
 		#region Class Members
 		/// <summary>
 		/// Defines if this logo slot is active.
 		/// </summary>
 		public bool SlotUsed;
+
+		/// <summary>
+		/// Image header data (typically skipped)
+		/// </summary>
+		public byte[] HeaderData = new byte[0x10];
 
 		/// <summary>
 		/// Palette for this logo.
@@ -50,10 +56,13 @@ namespace FPRLogoViewer
 		/// Load logo data from a raw logo rip.
 		/// </summary>
 		/// <param name="path">File path to raw logo data.</param>
-		public void LoadFromRawFile(string path) {
+		public void Load_RawFile(string path) {
 			FileStream fs = new FileStream(path, FileMode.Open);
 			BinaryReader br = new BinaryReader(fs);
 
+			br.BaseStream.Seek(0, SeekOrigin.Begin);
+			this.HeaderData = br.ReadBytes(0x10);
+			this.SlotUsed = (this.HeaderData[0] == 1);
 			ReadPalette(br);
 			ReadPixelData(br);
 			br.Close();
@@ -64,14 +73,54 @@ namespace FPRLogoViewer
 		/// Loads logo data from memory.
 		/// </summary>
 		/// <param name="logoData">Raw logo data</param>
-		public void LoadFromMemory(byte[] logoData) {
+		public void Load_Memory(byte[] logoData) {
 			MemoryStream ms = new MemoryStream(logoData);
 			BinaryReader br = new BinaryReader(ms);
 
+			br.BaseStream.Seek(0, SeekOrigin.Begin);
+			this.HeaderData = br.ReadBytes(0x10);
+			this.SlotUsed = (this.HeaderData[0] == 1);
 			ReadPalette(br);
 			ReadPixelData(br);
 			br.Close();
 			UpdateBitmap();
+		}
+		#endregion
+
+		#region Saving Routines
+		/// <summary>
+		/// Saves raw Fire Pro Returns logo data to a file.
+		/// </summary>
+		/// <param name="path">Path to new filename.</param>
+		public void SaveFile_RawLogo(string path) {
+			FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
+			BinaryWriter bw = new BinaryWriter(fs);
+
+			this.HeaderData[0x00] = 1; // set logo slot as used
+			bw.Write(this.HeaderData);
+			WritePalette(bw);
+			bw.Write(this.PixelData);
+
+			bw.Flush();
+			bw.Close();
+		}
+
+		/// <summary>
+		/// Saves logo as a PNG file.
+		/// </summary>
+		/// <param name="path">Path to logo PNG file.</param>
+		public void SaveFile_PNG(string path) {
+			UpdateBitmap();
+			this.LogoBitmap.Save(path, ImageFormat.Png);
+		}
+
+		/// <summary>
+		/// Saves logo as a GIF file.
+		/// </summary>
+		/// <param name="path">Path to logo GIF file.</param>
+		public void SaveFile_GIF(string path) {
+			UpdateBitmap();
+			this.LogoBitmap.Save(path, ImageFormat.Gif);
 		}
 		#endregion
 
@@ -164,6 +213,25 @@ namespace FPRLogoViewer
 					}
 				}
 			}
+		}
+		#endregion
+
+		#region Conversion Routines
+		/// <summary>
+		/// Converts from LogoData structure to raw Fire Pro Returns logo data.
+		/// </summary>
+		/// <returns>Logo as raw Fire Pro Returns logo data.</returns>
+		private byte[] ToRawLogoData() {
+			byte[] logoData = new byte[this.HeaderData.Length + (4*this.PaletteData.Length) + this.PixelData.Length];
+			MemoryStream ms = new MemoryStream(logoData);
+			BinaryWriter bw = new BinaryWriter(ms);
+
+			bw.Write(this.HeaderData);
+			WritePalette(bw);
+			bw.Write(this.PixelData);
+
+			bw.Close();
+			return logoData;
 		}
 		#endregion
 	}
