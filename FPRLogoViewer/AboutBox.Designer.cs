@@ -74,12 +74,12 @@
 			// linkLabel1
 			// 
 			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Location = new System.Drawing.Point(159, 30);
+			this.linkLabel1.Location = new System.Drawing.Point(154, 30);
 			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(121, 13);
+			this.linkLabel1.Size = new System.Drawing.Size(126, 13);
 			this.linkLabel1.TabIndex = 4;
 			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "http://www.ajworld.net/";
+			this.linkLabel1.Text = "http://firepro.ajworld.net/";
 			this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 

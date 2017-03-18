@@ -18,7 +18,7 @@ namespace FPRLogoViewer
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
 			// visit ajworld.net in your browser.
-			System.Diagnostics.Process.Start("http://www.ajworld.net/");
+			System.Diagnostics.Process.Start("http://firepro.ajworld.net/");
 		}
 	}
 }
