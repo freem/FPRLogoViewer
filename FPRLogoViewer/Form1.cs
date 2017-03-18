@@ -279,7 +279,7 @@ namespace FPRLogoViewer
 			for (int y = 0; y < 128; y++) {
 				for (int x = 0; x < 128; x++) {
 					int pixelLoc = (y * 128) + x;
-					if (logoData[pixelLoc] < 0x3F) {
+					if (logoData[pixelLoc] <= 0x3F) {
 						logoBitmap.SetPixel(x, y, logoPalette[logoData[pixelLoc]]);
 					}
 					else {
