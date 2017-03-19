@@ -48,9 +48,9 @@
 			this.label1.AutoSize = true;
 			this.label1.Location = new System.Drawing.Point(9, 9);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(145, 13);
+			this.label1.Size = new System.Drawing.Size(134, 13);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "Fire Pro Returns Logo Viewer";
+			this.label1.Text = "Fire Pro Returns Logo Tool";
 			// 
 			// labelVersion
 			// 
@@ -99,7 +99,7 @@
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "AboutBox";
-			this.Text = "About Fire Pro Returns Logo Viewer";
+			this.Text = "About Fire Pro Returns Logo Tool";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

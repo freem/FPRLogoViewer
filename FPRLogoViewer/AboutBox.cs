@@ -13,7 +13,7 @@ namespace FPRLogoViewer
 		}
 
 		private void buttonClose_Click(object sender, EventArgs e) {
-			this.Hide();
+			this.Close();
 		}
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
