@@ -97,9 +97,7 @@ namespace FPRLogoViewer
 			BinaryWriter bw = new BinaryWriter(fs);
 
 			this.HeaderData[0x00] = 1; // set logo slot as used
-			bw.Write(this.HeaderData);
-			WritePalette(bw);
-			bw.Write(this.PixelData);
+			bw.Write(ToRawLogoData());
 
 			bw.Flush();
 			bw.Close();
@@ -112,15 +110,6 @@ namespace FPRLogoViewer
 		public void SaveFile_PNG(string path) {
 			UpdateBitmap();
 			this.LogoBitmap.Save(path, ImageFormat.Png);
-		}
-
-		/// <summary>
-		/// Saves logo as a GIF file.
-		/// </summary>
-		/// <param name="path">Path to logo GIF file.</param>
-		public void SaveFile_GIF(string path) {
-			UpdateBitmap();
-			this.LogoBitmap.Save(path, ImageFormat.Gif);
 		}
 		#endregion
 
@@ -150,7 +139,13 @@ namespace FPRLogoViewer
 				_bw.Write((byte)this.PaletteData[i].R); // red
 				_bw.Write((byte)this.PaletteData[i].G); // green
 				_bw.Write((byte)this.PaletteData[i].B); // blue
-				_bw.Write((byte)0x7F); // xxx: alpha is hardcoded because I don't trust myself
+				// xxx: is this conversion ok
+				if (this.PaletteData[i].A == 0xFF) {
+					_bw.Write((byte)0x80); // full alpha
+				}
+				else {
+					_bw.Write((byte)((this.PaletteData[i].A / 2)-1));
+				}
 			}
 		}
 
@@ -209,11 +204,12 @@ namespace FPRLogoViewer
 						this.LogoBitmap.SetPixel(x, y, this.PaletteData[this.PixelData[pixelLoc]]);
 					}
 					else {
-						// how to handle invalid indexes?
+						// how to handle invalid palette indexes?
 					}
 				}
 			}
 		}
+
 		#endregion
 
 		#region Conversion Routines
@@ -221,18 +217,71 @@ namespace FPRLogoViewer
 		/// Converts from LogoData structure to raw Fire Pro Returns logo data.
 		/// </summary>
 		/// <returns>Logo as raw Fire Pro Returns logo data.</returns>
-		private byte[] ToRawLogoData() {
-			byte[] logoData = new byte[this.HeaderData.Length + (4*this.PaletteData.Length) + this.PixelData.Length];
-			MemoryStream ms = new MemoryStream(logoData);
-			BinaryWriter bw = new BinaryWriter(ms);
-
-			bw.Write(this.HeaderData);
-			WritePalette(bw);
-			bw.Write(this.PixelData);
-
-			bw.Close();
-			return logoData;
+		public byte[] ToRawLogoData() {
+			using (MemoryStream ms = new MemoryStream()) {
+				using (BinaryWriter bw = new BinaryWriter(ms)) {
+					ms.Seek(0, SeekOrigin.Begin);
+					bw.Write(this.HeaderData);
+					WritePalette(bw);
+					bw.Write(this.PixelData);
+					return ms.ToArray();
+				}
+			}
 		}
+
+		/// <summary>
+		/// Converts from GIF file to LogoData structure.
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public bool FromGif(string path, out int errorCode) {
+			Bitmap gifBitmap = new Bitmap(path);
+			if(gifBitmap.PixelFormat != PixelFormat.Format8bppIndexed){
+				errorCode = 1; // wrong pixel format
+				return false;
+			}
+
+			// check for images that aren't 128x128
+			if (gifBitmap.Width != 128 || gifBitmap.Height != 128) {
+				errorCode = 2; // wrong image size
+				return false;
+			}
+
+			// determine how many colors are used in this image
+			// (needs to be 64 or less)
+
+			
+
+			// how to get transparent color index:
+			// gifBitmap.GetPropertyItem(0x5104).Value[0]
+
+			/*
+			foreach (PropertyItem p in gifBitmap.PropertyItems) {
+				if (p.Id == 0x5104) { }
+			}
+			*/
+
+			/*
+			bool hasTransparentColor = true;
+			try {
+				PropertyItem transparentIndex = gifBitmap.GetPropertyItem(0x5104);
+			}
+			catch {
+				hasTransparentColor = false;
+			}
+
+			if (!hasTransparentColor) {
+				System.Windows.Forms.MessageBox.Show("no transparent index");
+			}
+			else {
+				System.Windows.Forms.MessageBox.Show(String.Format("pal_length {0}\ntransparent index {1}", gifBitmap.Palette.Entries.Length, gifBitmap.GetPropertyItem(0x5104).Value[0]), "gif data");
+			}
+			 */
+
+			errorCode = 0; // no error
+			return true;
+		}
+
 		#endregion
 	}
 }
