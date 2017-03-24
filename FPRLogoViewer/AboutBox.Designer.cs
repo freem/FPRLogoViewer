@@ -99,6 +99,7 @@
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "AboutBox";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "About Fire Pro Returns Logo Tool";
 			this.ResumeLayout(false);
 			this.PerformLayout();
