@@ -16,6 +16,11 @@ namespace FPRLogoViewer
 		/// </summary>
 		public byte[] RawSaveData = new byte[0xDE000];
 
+		/// <summary>
+		/// Full copy of .psu save data; only used for .psu format saves.
+		/// </summary>
+		public byte[] PsuSaveData;
+
 		/*
 	     * An extremely special thanks goes out to Jason Blackhart, for
 	     * providing us with the information behind FPR's checksumming.
@@ -347,9 +352,14 @@ namespace FPRLogoViewer
 		/// </summary>
 		/// <param name="path">Path to .psu save file.</param>
 		public void Load_PSU(string path) {
-			// raw save data starts at 0x800 in a psu file
 			FileStream fs = new FileStream(path, FileMode.Open);
 			BinaryReader br = new BinaryReader(fs);
+
+			// read in raw PSU save data for ease of writing back changes
+			PsuSaveData = br.ReadBytes((int)fs.Length);
+
+			// FPR raw save data starts at 0x800 in a psu file
+			// xxx: assumption
 			fs.Seek(0x800,SeekOrigin.Begin);
 			this.RawSaveData = br.ReadBytes(this.RawSaveData.Length);
 			br.Close();
@@ -371,7 +381,7 @@ namespace FPRLogoViewer
 		/// <summary>
 		/// Calculates checksums and writes Fire Pro Wrestling Returns save data to a file.
 		/// </summary>
-		/// <param name="path"></param>
+		/// <param name="path">Path to raw save file.</param>
 		public void Save_Raw(string path) {
 			// Store updated logos into RawSaveData.
 			MemoryStream ms = new MemoryStream(this.RawSaveData);
@@ -380,6 +390,7 @@ namespace FPRLogoViewer
 			mbw.Seek(0xC5810, SeekOrigin.Begin);
 			for (int i = 0; i < this.Logos.Length; i++ ) {
 				// write logo data back
+				mbw.Write(this.Logos[i].ToRawLogoData());
 			}
 
 			mbw.Close();
@@ -408,7 +419,27 @@ namespace FPRLogoViewer
 			}
 		}
 
+		/// <summary>
+		/// Saves data to a PSU file.
+		/// </summary>
+		/// <param name="path">Path to PSU format save file.</param>
+		public void Save_PSU(string path) {
+			// Store updated logos into RawSaveData.
+			MemoryStream ms = new MemoryStream(this.RawSaveData);
+			BinaryWriter mbw = new BinaryWriter(ms);
 
+			mbw.Seek(0xC5810, SeekOrigin.Begin);
+			for (int i = 0; i < this.Logos.Length; i++) {
+				// write logo data back
+				mbw.Write(this.Logos[i].ToRawLogoData());
+			}
+
+			mbw.Close();
+
+			// perform checksumming on main save data
+
+			// replace data in PSU with updated main save
+		}
 		#endregion
 
 		/// <summary>
