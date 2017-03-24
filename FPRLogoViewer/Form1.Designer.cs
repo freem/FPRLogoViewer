@@ -1,6 +1,6 @@
 ﻿namespace FPRLogoViewer
 {
-	partial class mainForm
+	partial class Form1
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -259,7 +259,7 @@
 			this.panelCursorColor.Size = new System.Drawing.Size(138, 103);
 			this.panelCursorColor.TabIndex = 0;
 			// 
-			// mainForm
+			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

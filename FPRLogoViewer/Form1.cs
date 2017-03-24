@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* xxx: no longer active, only kept around for reference */
+
+using System;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -8,7 +10,7 @@ using System.IO;
 
 namespace FPRLogoViewer
 {
-	public partial class mainForm : Form
+	public partial class Form1 : Form
 	{
 		public Color[] logoPalette;
 		public byte[] logoData;
@@ -16,7 +18,7 @@ namespace FPRLogoViewer
 		public bool[] validLogos;
 		public AboutBox aboutBox = new AboutBox();
 
-		public mainForm() {
+		public Form1() {
 			InitializeComponent();
 			logoPalette = new Color[64];
 			logoData = new byte[128*128];
