@@ -363,15 +363,20 @@ namespace FPRLogoViewer
 			}
 
 			// Grab GIF pixels.
+
+			// The pixels used to go directly into PixelData, but this caused
+			// an issue on a failed import where existing logo data would be
+			// overwritten. Not good.
+			byte[] gifPixels = new byte[128 * 128];
 			BitmapData gifBData = gifBitmap.LockBits(new Rectangle(0, 0, gifBitmap.Width, gifBitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format8bppIndexed);
 			IntPtr gifPtr = gifBData.Scan0;
-			System.Runtime.InteropServices.Marshal.Copy(gifPtr, this.PixelData, 0, 128 * 128);
+			System.Runtime.InteropServices.Marshal.Copy(gifPtr, gifPixels, 0, 128 * 128);
 			gifBitmap.UnlockBits(gifBData);
 
 			// Examine palette usage
-			for (int i = 0; i < this.PixelData.Length; i++) {
-				if (this.GifPaletteUsage[this.PixelData[i]] == false) {
-					this.GifPaletteUsage[this.PixelData[i]] = true;
+			for (int i = 0; i < gifPixels.Length; i++) {
+				if (this.GifPaletteUsage[gifPixels[i]] == false) {
+					this.GifPaletteUsage[gifPixels[i]] = true;
 				}
 			}
 			int indexCount = 0;
@@ -388,6 +393,7 @@ namespace FPRLogoViewer
 
 			// At this point, it seems REASONABLY safe to assume a compatible GIF
 			// has been imported. These words will probably come back to haunt me.
+			this.PixelData = gifPixels;
 
 			// handle transparency before killing the color indices
 			foreach (PropertyItem prop in gifBitmap.PropertyItems) {
