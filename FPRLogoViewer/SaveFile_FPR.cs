@@ -359,7 +359,7 @@ namespace FPRLogoViewer
 			PsuSaveData = br.ReadBytes((int)fs.Length);
 
 			// FPR raw save data starts at 0x800 in a psu file
-			// xxx: assumption
+			// xxx: assumption that may not always be true
 			fs.Seek(0x800,SeekOrigin.Begin);
 			this.RawSaveData = br.ReadBytes(this.RawSaveData.Length);
 			br.Close();
@@ -436,9 +436,38 @@ namespace FPRLogoViewer
 
 			mbw.Close();
 
-			// perform checksumming on main save data
+			// update checksums
+			CalculateSaveChecksum();
 
-			// replace data in PSU with updated main save
+			// replace data in PSU copy
+			ms = new MemoryStream(this.PsuSaveData);
+			mbw = new BinaryWriter(ms);
+
+			// the assumption made during loading is that the raw FPR save data
+			// begins at 0x800 in a PSU file. This may not always be the case.
+			// Kill 'em all and let Jumbo Tsuruta sort 'em out.
+			ms.Seek(0x800, SeekOrigin.Begin);
+			mbw.Write(this.RawSaveData);
+			// write checksums
+			// Part 1
+			for (int i = 0; i < this.SaveChecksums1.Length; i++) {
+				mbw.Write(this.SaveChecksums1[i]);
+			}
+			// Part 2
+			for (int i = 0; i < this.SaveChecksums2.Length; i++) {
+				mbw.Write(this.SaveChecksums2[i]);
+			}
+			// Part 3
+			mbw.Write(this.SaveChecksum3);
+
+			mbw.Close();
+
+			// and perform write to the PSU file itself
+			FileStream fs = new FileStream(path,FileMode.OpenOrCreate);
+			mbw = new BinaryWriter(fs);
+			mbw.Write(this.PsuSaveData);
+			mbw.Flush();
+			mbw.Close();
 		}
 		#endregion
 
