@@ -21,17 +21,17 @@ time, mark, audio, video {
 }
 
 /* undo resetting */
-p{ line-height: 1.25em; margin-top:0.25em; margin-bottom:0.25em; }
+p{ line-height: 1.25em; margin-top:0.3em; margin-bottom:0.3em; }
 small{ font-size:80%; }
 em{ font-style:italic; }
 strong{ font-weight:bold; }
 
-h1{ font-size:150%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
-h2{ font-size:135%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
-h3{ font-size:125%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
-h4{ font-size:112%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
-h5{ font-size:106%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
-h6{ font-size:100%; font-weight:bold; padding-top:0.15em; padding-bottom:0.25em; }
+h1{ font-size:150%; font-weight:bold; padding-top:0.2em; padding-bottom:0.25em; }
+h2{ font-size:135%; font-weight:bold; padding-top:0.2em; padding-bottom:0.25em; }
+h3{ font-size:125%; font-weight:bold; padding-top:0.2em; padding-bottom:0.25em; }
+h4{ font-size:112%; font-weight:bold; padding-top:0.2em; padding-bottom:0.25em; }
+h5{ font-size:106%; font-weight:bold; padding-top:0.2em; padding-bottom:0.25em; }
+h6{ font-size:100%; font-weight:bold; padding-top:0.2em; padding-bottom:0.25em; }
 
 ol{ margin-left:2em; }
 ul{ margin-left:2em; }

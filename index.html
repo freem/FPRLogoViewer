@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>FPRLogoViewer - Fire Pro Wrestling Returns Logo Viewer</title>
+<title>FPRLogoTool - Fire Pro Wrestling Returns Logo Tool</title>
 <link rel="stylesheet" href="./docs.css" />
 </head>
 
 <body>
 <div id="header">
-<h1><a href="https://github.com/freem/FPRLogoViewer/">FPRLogoViewer</a></h1>
-<span id="tagline">Fire Pro Wrestling Returns Logo Viewer</span>
+<h1><a href="https://github.com/freem/FPRLogoViewer/">FPRLogoTool</a></h1>
+<span id="tagline">Fire Pro Wrestling Returns Logo Tool</span>
 </div>
 
 <div id="main">
 <h2>Introduction</h2>
-<p>FPRLogoViewer allows you to view logos from Fire Pro Wrestling Returns save data.</p>
+<p>FPRLogoTool allows you to import and export logos from Fire Pro Wrestling
+Returns save data.</p>
 
 <hr class="midline" />
 
@@ -25,8 +26,8 @@
 <hr class="midline" />
 
 <h3>Supported File Formats</h3>
-<p>There are a myriad of PS2 save formats out there, and FPRLogoViewer only
-supports a few of them (as well as raw logo rips).</p>
+<p>There are a myriad of PS2 save formats out there, and FPRLogoTool only
+supports a few of them.</p>
 <ul>
 <li><strong>EMS Memory Linker</strong> (.psu) &ndash; A single game save, 952,320 bytes in length.</li>
 <li>
@@ -39,8 +40,6 @@ supports a few of them (as well as raw logo rips).</p>
 	<li><strong>BESLES-55041</strong> &ndash; PAL/Europe</li>
 	</ul>
 </li>
-<li><strong>Raw logo rips</strong> (.bin) &ndash; 16,656 bytes of logo data,
-ripped from a save file.</li>
 </ul>
 
 <hr />
@@ -49,44 +48,33 @@ ripped from a save file.</li>
 <p>The program is pretty straightforward; the hardest part will be getting the
 Fire Pro Returns save data, which is beyond the scope of this guide.</p>
 
-<h3>Default View</h3>
-<img src="program_init.png" title="Default View" alt="A picture of the program after being launched. There are three sections in the main form. The leftmost section is a gray box, where the logo image gets loaded. The middle section contains the Cursor Color. The rightmost section contains the Color Table, which has a drop-down box." />
-<p>The default view upon starting the program. There are three sections, laid out
-in a row.</p>
+<img src="program_init.png" title="Program on initial load." alt="A picture of the program after being launched. The form contains a large box where the logo images get loaded." />
+<p>The default view upon starting the program. The large box in the middle of
+the form will contain the logos once a save file is opened (via File &rarr; Open).</p>
 
-<h4>Logo Image</h4>
-<p>The leftmost box is where the logo image will appear. Move the mouse cursor
-inside of the box to see more information on the status bar, as well as see the
-color in the Cursor Color section. Clicking inside of the box will change the
-active color table index.</p>
+<img src="program_view.png" title="Program after loading a save file." alt="A picture of the program after a save file is loaded. In this example, two logos appear in the first two slots." />
+<p>Once a save is loaded, click on a logo to select it. This will enable the
+Import and Export options found in the program.</p>
 
-<h4>Cursor Color</h4>
-<p>The middle section shows you what color is under your cursor when it's in the
-Logo Image box.</p>
+<h3>Import Raw Logo</h3>
+<p>This option imports logo data from the Fire Pro Wrestling Returns raw logo format.</p>
 
-<h4>Color Table</h4>
-<p>The rightmost box contains the Color Table. Each logo has 64 possible colors.
-You can either change the active value in the drop-down box, or click on a pixel
-in the Logo Image area.</p>
+<h3>Import from GIF</h3>
+<p>This option imports a logo from a GIF file. Restrictions with regards to GIF
+importing are as follows:</p>
+<ul>
+<li>No animated GIFs.</li>
+<li>Images must be 128x128 pixels.</li>
+<li>Image must use 64 colors or less.</li>
+<li>Partial transparency (supported by raw logo format) is not supported.</li>
+</ul>
 
-<h4>Open Logo</h4>
-<p>The File &rarr; Open menu item allows you to open a supported file format
-containing one or more Fire Pro Wrestling Returns logos.</p>
+<h3>Export Raw Logo</h3>
+<p>This option exports the logo data in the raw format expected by Fire Pro Wrestling
+Returns.</p>
 
-<h5>Select Logo</h5>
-<img src="dialog_selectlogo.png" title="Select Logo dialog" alt="The Select Logo dialog contains a list of six items, 'Logo 1' to 'Logo 6', giving the status of each logo as 'Logo Exists' or 'No Logo'. (In this instance, the first five logos are filled (marked 'Logo Exists'), and Logo 6 is marked 'No Logo'.) Below the listbox are two buttons, 'OK' and 'Cancel'." />
-<p>When opening a save file, you can choose what logo is loaded. The entries will
-have "Logo Exists" if a logo exists in the slot or "No Logo" if a logo is not present.</p>
-
-<h4>Save Logo</h4>
-<p>The File &rarr; Save menu item allows you to export the logo to a PNG file.</p>
-
-<hr class="midline" />
-
-<h3>Logo View</h3>
-<img src="program_view.png" title="Logo View" alt="A picture of the program after a logo is loaded. The leftmost area now has a logo, or in this case, a checkerboard pattern in the upper left hand corner. The cursor is over a transparent color, so the middle section's color swatch is the same color as the form. The rightmost section has color number 1, #FFFFFF/white active." />
-<p>Upon opening/selecting a logo, the image will be loaded into the box, and the
-color table will be populated.</p>
+<h3>Export to PNG</h3>
+<p>This option exports the logo as a PNG file, retaining any alpha transparency.</p>
 
 <hr />
 
@@ -96,7 +84,8 @@ color table will be populated.</p>
 </div>
 
 <div id="footer">
-<a href="https://github.com/freem/FPRLogoViewer/">FPRLogoViewer</a> written by <a href="http://www.ajworld.net/">freem/AJ</a><br/>
+Main portions of <a href="https://github.com/freem/FPRLogoViewer/">FPRLogoTool</a> written by <a href="http://www.ajworld.net/">freem/AJ</a>.<br/>
+Fire Pro Returns save checksum generation code by Jason Blackhart.<br/>
 All trademarks are the property of their respective owners, not me.
 </div>
 
