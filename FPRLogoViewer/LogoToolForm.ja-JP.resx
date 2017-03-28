@@ -117,21 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="menuItem_File_Open.Text" xml:space="preserve">
-    <value>オープン... (&amp;O)</value>
-  </data>
-  <data name="menuItem_File_Save.Text" xml:space="preserve">
-    <value>セーブ (&amp;S)</value>
-  </data>
-  <data name="menuItem_File_Exit.Text" xml:space="preserve">
-    <value>出口 (&amp;X)</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="menuItem_File.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 20</value>
   </data>
   <data name="menuItem_File.Text" xml:space="preserve">
     <value>ファイル (&amp;F)</value>
+  </data>
+  <data name="menuItem_Import.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="menuItem_Import.Text" xml:space="preserve">
+    <value>インポート (&amp;I)</value>
+  </data>
+  <data name="menuItem_Export.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="menuItem_Export.Text" xml:space="preserve">
+    <value>エクスポート (&amp;E)</value>
+  </data>
+  <data name="menuItem_Help.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="menuItem_Help.Text" xml:space="preserve">
+    <value>ヘルプ (&amp;H)</value>
+  </data>
+  <data name="menuItem_File_Open.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 22</value>
+  </data>
+  <data name="menuItem_File_Open.Text" xml:space="preserve">
+    <value>オープン... (&amp;O)</value>
+  </data>
+  <data name="menuItem_File_Save.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 22</value>
+  </data>
+  <data name="menuItem_File_Save.Text" xml:space="preserve">
+    <value>セーブ (&amp;S)</value>
+  </data>
+  <data name="menuItem_File_SaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 22</value>
+  </data>
+  <data name="menuItem_File_SaveAs.Text" xml:space="preserve">
+    <value>別名で保存... (&amp;A)</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 6</value>
+  </data>
+  <data name="menuItem_File_Exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 22</value>
+  </data>
+  <data name="menuItem_File_Exit.Text" xml:space="preserve">
+    <value>出口 (&amp;X)</value>
   </data>
   <data name="menuItem_Import_Raw.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 22</value>
@@ -148,12 +184,6 @@
   <data name="menuItem_Import_Gif.Text" xml:space="preserve">
     <value>&amp;GIFからのインポート...</value>
   </data>
-  <data name="menuItem_Import.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
-  </data>
-  <data name="menuItem_Import.Text" xml:space="preserve">
-    <value>インポート (&amp;I)</value>
-  </data>
   <data name="menuItem_Export_Raw.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 22</value>
   </data>
@@ -169,29 +199,23 @@
   <data name="menuItem_Export_Png.Text" xml:space="preserve">
     <value>&amp;PNG形式でエクスポート...</value>
   </data>
-  <data name="menuItem_Export.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 20</value>
-  </data>
-  <data name="menuItem_Export.Text" xml:space="preserve">
-    <value>エクスポート (&amp;E)</value>
-  </data>
   <data name="menuItem_Help_About.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 22</value>
   </data>
   <data name="menuItem_Help_About.Text" xml:space="preserve">
     <value>プログラム情報... (&amp;A)</value>
   </data>
-  <data name="menuItem_Help.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 20</value>
-  </data>
-  <data name="menuItem_Help.Text" xml:space="preserve">
-    <value>ヘルプ (&amp;H)</value>
-  </data>
   <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 17</value>
   </data>
   <data name="statusLabel.Text" xml:space="preserve">
     <value>ファイルがロードされていません。</value>
+  </data>
+  <data name="groupBoxLogoList.Text" xml:space="preserve">
+    <value>ロゴ</value>
+  </data>
+  <data name="contextMenuStripLogoItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 98</value>
   </data>
   <data name="importRawToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>206, 22</value>
@@ -219,12 +243,6 @@
   </data>
   <data name="exportPNGToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;PNG形式でエクスポート...</value>
-  </data>
-  <data name="contextMenuStripLogoItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 98</value>
-  </data>
-  <data name="groupBoxLogoList.Text" xml:space="preserve">
-    <value>ロゴ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ファイプロ・リターンズ ロゴツール</value>

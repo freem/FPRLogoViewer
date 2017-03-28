@@ -117,16 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>556, 423</value>
-  </data>
   <data name="menuItem_File_Open.Text" xml:space="preserve">
     <value>&amp;Open...</value>
   </data>
   <data name="&gt;&gt;menuItem_File_SaveAs.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="imageListLogos.ImageSize" type="System.Drawing.Size, System.Drawing">
     <value>128, 128</value>
   </data>
@@ -148,11 +145,11 @@
   <data name="&gt;&gt;importGIFToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
+  <data name="menuItem_File_Open.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 22</value>
   </data>
-  <data name="&gt;&gt;menuItem_Help_About.Name" xml:space="preserve">
-    <value>menuItem_Help_About</value>
+  <data name="menuItem_File_SaveAs.Text" xml:space="preserve">
+    <value>Save &amp;As...</value>
   </data>
   <data name="menuItem_Import.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 20</value>
@@ -169,9 +166,6 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>LogoToolForm</value>
   </data>
-  <data name="&gt;&gt;menuBar.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="listViewLogos.Size" type="System.Drawing.Size, System.Drawing">
     <value>520, 346</value>
   </data>
@@ -181,8 +175,8 @@
   <data name="&gt;&gt;listViewLogos.Parent" xml:space="preserve">
     <value>groupBoxLogoList</value>
   </data>
-  <data name="&gt;&gt;menuItem_Help.Name" xml:space="preserve">
-    <value>menuItem_Help</value>
+  <data name="statusLabel.Text" xml:space="preserve">
+    <value>No file loaded.</value>
   </data>
   <data name="&gt;&gt;groupBoxLogoList.Name" xml:space="preserve">
     <value>groupBoxLogoList</value>
@@ -190,18 +184,23 @@
   <data name="&gt;&gt;statusLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="menuItem_Help.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
   <data name="exportPNGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
+  </data>
+  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 22</value>
   </data>
   <data name="&gt;&gt;imageListLogos.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;menuItem_Export.Name" xml:space="preserve">
+    <value>menuItem_Export</value>
+  </data>
   <data name="menuItem_File_Save.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuItem_File_SaveAs.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Shift+S</value>
   </data>
   <data name="&gt;&gt;menuItem_Help_About.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -212,17 +211,24 @@
   <data name="&gt;&gt;listViewLogos.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;menuItem_Export_Raw.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="menuItem_Import.Text" xml:space="preserve">
     <value>&amp;Import</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuItem_File_Exit.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+F4</value>
   </data>
   <data name="&gt;&gt;menuItem_Import_Raw.Name" xml:space="preserve">
     <value>menuItem_Import_Raw</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
   </data>
   <data name="&gt;&gt;listViewLogos.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -230,17 +236,17 @@
   <data name="importGIFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
+  <data name="importRawToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
+  </data>
   <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
     <value>toolStripSeparator4</value>
   </data>
-  <data name="&gt;&gt;menuItem_File_Save.Name" xml:space="preserve">
-    <value>menuItem_File_Save</value>
+  <data name="groupBoxLogoList.Text" xml:space="preserve">
+    <value>Logos</value>
   </data>
   <data name="&gt;&gt;menuItem_Import.Name" xml:space="preserve">
     <value>menuItem_Import</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 6</value>
   </data>
   <data name="listViewLogos.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 19</value>
@@ -248,14 +254,11 @@
   <data name="groupBoxLogoList.Size" type="System.Drawing.Size, System.Drawing">
     <value>532, 371</value>
   </data>
-  <data name="groupBoxLogoList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 27</value>
-  </data>
   <data name="&gt;&gt;imageListLogos.Name" xml:space="preserve">
     <value>imageListLogos</value>
   </data>
-  <data name="importRawToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Import Raw Logo...</value>
+  <data name="menuItem_Export.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="groupBoxLogoList.TabIndex" type="System.Int32, mscorlib">
@@ -270,47 +273,50 @@
   <data name="menuItem_File.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 6</value>
+  </data>
   <data name="menuItem_Export_Png.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
-  <data name="menuItem_Import_Gif.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
+  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="menuItem_File_Save.Text" xml:space="preserve">
-    <value>&amp;Save</value>
+  <data name="importRawToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Import Raw Logo...</value>
   </data>
-  <data name="&gt;&gt;menuItem_Export.Name" xml:space="preserve">
-    <value>menuItem_Export</value>
+  <data name="menuItem_Help_About.ToolTipText" xml:space="preserve">
+    <value>About this silly little program</value>
   </data>
   <data name="&gt;&gt;menuItem_File.Name" xml:space="preserve">
     <value>menuItem_File</value>
   </data>
-  <data name="&gt;&gt;exportRawLogoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menuBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 24</value>
   </data>
   <data name="menuItem_File.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
   </data>
-  <data name="&gt;&gt;menuItem_Import_Gif.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;menuItem_File_Exit.Name" xml:space="preserve">
     <value>menuItem_File_Exit</value>
   </data>
-  <data name="&gt;&gt;exportPNGToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuItem_Help_About.Name" xml:space="preserve">
+    <value>menuItem_Help_About</value>
   </data>
   <data name="&gt;&gt;listViewLogos.Name" xml:space="preserve">
     <value>listViewLogos</value>
   </data>
-  <data name="&gt;&gt;menuBar.Name" xml:space="preserve">
-    <value>menuBar</value>
-  </data>
   <data name="menuItem_Help.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 20</value>
   </data>
-  <data name="contextMenuStripLogoItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 98</value>
+  <data name="&gt;&gt;menuBar.Name" xml:space="preserve">
+    <value>menuBar</value>
+  </data>
+  <data name="&gt;&gt;menuItem_File.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBoxLogoList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 27</value>
   </data>
   <data name="menuItem_File_Open.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+O</value>
@@ -345,20 +351,14 @@
   <data name="menuBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="menuItem_File_Open.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
-  </data>
   <data name="listViewLogos.Alignment" type="System.Windows.Forms.ListViewAlignment, System.Windows.Forms">
     <value>SnapToGrid</value>
-  </data>
-  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="statusStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 22</value>
+  <data name="menuItem_File_Save.Text" xml:space="preserve">
+    <value>&amp;Save</value>
   </data>
   <data name="menuItem_Export.Text" xml:space="preserve">
     <value>&amp;Export</value>
@@ -375,8 +375,8 @@
   <data name="&gt;&gt;menuItem_File_Save.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menuItem_File_SaveAs.Text" xml:space="preserve">
-    <value>Save &amp;As...</value>
+  <data name="menuItem_File_SaveAs.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+Shift+S</value>
   </data>
   <data name="menuBar.Text" xml:space="preserve">
     <value>menuStrip1</value>
@@ -387,50 +387,50 @@
   <data name="&gt;&gt;menuItem_Export.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="importGIFToolStripMenuItem.Text" xml:space="preserve">
     <value>Import &amp;GIF...</value>
   </data>
   <data name="statusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 401</value>
   </data>
+  <data name="&gt;&gt;exportRawLogoToolStripMenuItem.Name" xml:space="preserve">
+    <value>exportRawLogoToolStripMenuItem</value>
+  </data>
   <data name="&gt;&gt;exportPNGToolStripMenuItem.Name" xml:space="preserve">
     <value>exportPNGToolStripMenuItem</value>
   </data>
-  <data name="menuItem_Help.Text" xml:space="preserve">
-    <value>&amp;Help</value>
+  <data name="&gt;&gt;menuItem_File_Save.Name" xml:space="preserve">
+    <value>menuItem_File_Save</value>
   </data>
   <data name="menuItem_Import_Raw.Text" xml:space="preserve">
     <value>Import &amp;Raw Logo...</value>
   </data>
-  <data name="exportPNGToolStripMenuItem.Text" xml:space="preserve">
-    <value>Export &amp;PNG...</value>
+  <data name="exportRawLogoToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Export Raw Logo...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Fire Pro Returns Logo Tool</value>
   </data>
+  <data name="&gt;&gt;menuItem_Import.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;menuItem_Export_Png.Name" xml:space="preserve">
     <value>menuItem_Export_Png</value>
-  </data>
-  <data name="menuItem_Export.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuItem_Export_Raw.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
-  <data name="importRawToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 22</value>
+  <data name="&gt;&gt;menuBar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;exportPNGToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;groupBoxLogoList.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="statusStrip1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 6</value>
   </data>
   <data name="menuItem_File_Save.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
@@ -438,11 +438,11 @@
   <data name="&gt;&gt;menuItem_File_Open.Name" xml:space="preserve">
     <value>menuItem_File_Open</value>
   </data>
-  <data name="&gt;&gt;menuBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menuItem_Import_Gif.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 22</value>
   </data>
-  <data name="&gt;&gt;menuItem_File.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -456,23 +456,26 @@
   <data name="&gt;&gt;statusStrip1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;exportRawLogoToolStripMenuItem.Name" xml:space="preserve">
-    <value>exportRawLogoToolStripMenuItem</value>
-  </data>
-  <data name="statusLabel.Text" xml:space="preserve">
-    <value>No file loaded.</value>
+  <data name="&gt;&gt;menuItem_Import_Gif.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="exportRawLogoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 22</value>
   </data>
-  <data name="&gt;&gt;menuItem_Export_Raw.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="contextMenuStripLogoItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 98</value>
   </data>
   <data name="&gt;&gt;statusStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="menuBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 24</value>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="menuItem_File_SaveAs.Size" type="System.Drawing.Size, System.Drawing">
     <value>193, 22</value>
@@ -480,11 +483,8 @@
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
   </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="groupBoxLogoList.Text" xml:space="preserve">
-    <value>Logos</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>556, 423</value>
   </data>
   <data name="&gt;&gt;groupBoxLogoList.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -498,8 +498,8 @@
   <data name="&gt;&gt;contextMenuStripLogoItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 6</value>
+  <data name="&gt;&gt;exportRawLogoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuItem_File_Exit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -507,14 +507,14 @@
   <data name="&gt;&gt;menuItem_Import_Raw.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="exportRawLogoToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Export Raw Logo...</value>
+  <data name="exportPNGToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export &amp;PNG...</value>
   </data>
-  <data name="menuItem_Help_About.ToolTipText" xml:space="preserve">
-    <value>About this silly little program</value>
+  <data name="statusStrip1.Text" xml:space="preserve">
+    <value>statusStrip1</value>
   </data>
-  <data name="&gt;&gt;menuItem_Import.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuItem_Help.Name" xml:space="preserve">
+    <value>menuItem_Help</value>
   </data>
   <metadata name="imageListLogos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>333, 17</value>
