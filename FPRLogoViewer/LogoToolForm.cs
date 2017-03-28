@@ -144,7 +144,7 @@ namespace FPRLogoViewer
 			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
 				// yell at the user if they try opening a .ps2 or .max file
 				if (Path.GetExtension(ofd.FileName) == ".ps2" || Path.GetExtension(ofd.FileName) == ".max") {
-					MessageBox.Show(".ps2 and .max files are not supported.");
+					MessageBox.Show(Properties.Resources.NoSupportPs2Max);
 					return;
 				}
 
@@ -176,7 +176,6 @@ namespace FPRLogoViewer
 			if (CurSaveFile == null) {
 				return;
 			}
-			// todo: currently only handles raw save file properly
 			switch (CurSaveType) {
 				case SaveType.SaveType_Raw:
 					CurSaveFile.Save_Raw(SaveFilePath);

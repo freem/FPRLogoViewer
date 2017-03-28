@@ -141,4 +141,7 @@
   <data name="NoFileLoaded" xml:space="preserve">
     <value>ファイルがロードされていません。</value>
   </data>
+  <data name="NoSupportPs2Max" xml:space="preserve">
+    <value>「.ps2」と「.max」ファイルはサポートされていません。</value>
+  </data>
 </root>

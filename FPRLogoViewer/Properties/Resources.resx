@@ -150,4 +150,7 @@
   <data name="NoFileLoaded" xml:space="preserve">
     <value>No file loaded.</value>
   </data>
+  <data name="NoSupportPs2Max" xml:space="preserve">
+    <value>.ps2 and .max files are not supported.</value>
+  </data>
 </root>

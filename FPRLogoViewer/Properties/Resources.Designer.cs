@@ -158,5 +158,14 @@ namespace FPRLogoViewer.Properties {
                 return ResourceManager.GetString("NoFileLoaded", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .ps2 and .max files are not supported..
+        /// </summary>
+        internal static string NoSupportPs2Max {
+            get {
+                return ResourceManager.GetString("NoSupportPs2Max", resourceCulture);
+            }
+        }
     }
 }
