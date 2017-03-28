@@ -142,8 +142,9 @@ namespace FPRLogoViewer
 			ofd.Filter = "EMS Memory Linker Save|*.psu|Raw FPR Save File (e.g. BASLUS-21702, BISLPM-66082, BESLES-55041)|*.*|All Files|*.*";
 			ofd.Multiselect = false;
 			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-				// todo: yell at the user if they try opening a .ps2 file
-				if (Path.GetExtension(ofd.FileName) == ".ps2") {
+				// yell at the user if they try opening a .ps2 or .max file
+				if (Path.GetExtension(ofd.FileName) == ".ps2" || Path.GetExtension(ofd.FileName) == ".max") {
+					MessageBox.Show(".ps2 and .max files are not supported.");
 					return;
 				}
 
