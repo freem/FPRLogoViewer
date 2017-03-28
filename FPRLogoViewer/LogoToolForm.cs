@@ -192,7 +192,7 @@ namespace FPRLogoViewer
 		private void menuItem_File_SaveAs_Click(object sender, EventArgs e) {
 			SaveFileDialog sfd = new SaveFileDialog();
 			sfd.Title = "Save Fire Pro Wrestling Returns Save File As...";
-			sfd.Filter = "Raw FPR Save File (e.g. BASLUS-21702, BISLPM-66082, BESLES-55041)|*.*|EMS Memory Linker Save|*.psu";
+			sfd.Filter = "EMS Memory Linker Save|*.psu|Raw FPR Save File (e.g. BASLUS-21702, BISLPM-66082, BESLES-55041)|*.*";
 			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
 				// determine what format we're saving as based on extension (wow this sucks)
 				if (Path.GetExtension(sfd.FileName) == ".psu") {
