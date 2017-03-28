@@ -103,12 +103,12 @@ namespace FPRLogoViewer
 		/// <returns>Human readable string for error code</returns>
 		private string GifErrorCodeToString(int code) {
 			switch (code) {
-				case 0: return "No errors";
-				case 1: return "Unable to open GIF file";
+				case 0: return Properties.Resources.GifError_None;
+				case 1: return Properties.Resources.GifError_CantOpen;
 				case 2: return "Wrong pixel format (should be 8BPP indexed)";
 				case 3: return "Wrong image size (should be 128x128 pixels)";
 				case 4: return "Too many colors in image (should be 64 or less)";
-				case 5: return "Could not remap color";
+				case 5: return Properties.Resources.GifError_CantRemapColor;
 				default: return String.Format("Undefined Error Code; yell at freem about it",code);
 			}
 		}
@@ -214,7 +214,7 @@ namespace FPRLogoViewer
 		/// </summary>
 		private void menuItem_Import_Raw_Click(object sender, EventArgs e) {
 			OpenFileDialog ofd = new OpenFileDialog();
-			ofd.Title = "Import Logo from Raw Logo Data...";
+			ofd.Title = Properties.Resources.ImportRawDialogTitle;
 			ofd.Filter = "Raw Logo Data|*.fprlogo;*.bin|All Files|*.*";
 			ofd.Multiselect = false;
 			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
@@ -229,7 +229,7 @@ namespace FPRLogoViewer
 		/// </summary>
 		private void menuItem_Import_Gif_Click(object sender, EventArgs e) {
 			OpenFileDialog ofd = new OpenFileDialog();
-			ofd.Title = "Import Logo from GIF...";
+			ofd.Title = Properties.Resources.ImportGifDialogTitle;
 			ofd.Filter = "GIF Files|*.gif";
 			ofd.Multiselect = false;
 			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
@@ -265,7 +265,7 @@ namespace FPRLogoViewer
 		/// </summary>
 		private void menuItem_Export_Raw_Click(object sender, EventArgs e) {
 			SaveFileDialog sfd = new SaveFileDialog();
-			sfd.Title = "Export Logo as Raw Logo Data...";
+			sfd.Title = Properties.Resources.ExportRawDialogTitle;
 			sfd.Filter = "Raw Logo Data|*.fprlogo;*.bin|All Files|*.*";
 			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
 				CurSaveFile.Logos[CurLogoSlot].SaveFile_RawLogo(sfd.FileName);
@@ -277,7 +277,7 @@ namespace FPRLogoViewer
 		/// </summary>
 		private void menuItem_Export_PNG_Click(object sender, EventArgs e) {
 			SaveFileDialog sfd = new SaveFileDialog();
-			sfd.Title = "Export Logo as PNG...";
+			sfd.Title = Properties.Resources.ExportPngDialogTitle;
 			sfd.Filter = "PNG Files|*.png";
 			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
 				CurSaveFile.Logos[CurLogoSlot].SaveFile_PNG(sfd.FileName);

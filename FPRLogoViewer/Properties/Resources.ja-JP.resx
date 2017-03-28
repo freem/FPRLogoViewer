@@ -118,36 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExportPngDialogTitle" xml:space="preserve">
-    <value>Export Logo as PNG...</value>
+    <value>PNG形式でエクスポート...</value>
   </data>
   <data name="ExportRawDialogTitle" xml:space="preserve">
-    <value>Export Logo as Raw Logo Data...</value>
+    <value>生のロゴをエクスポート...</value>
   </data>
   <data name="GifError_CantOpen" xml:space="preserve">
-    <value>Unable to open GIF file</value>
+    <value>GIFファイルを開くことができません</value>
   </data>
   <data name="GifError_CantRemapColor" xml:space="preserve">
-    <value>Could not remap color</value>
+    <value>色を再マップできませんでした</value>
   </data>
   <data name="GifError_None" xml:space="preserve">
-    <value>No errors.</value>
-  </data>
-  <data name="GifError_TooManyColors" xml:space="preserve">
-    <value>Too many colors in image (should be 64 or less)</value>
-  </data>
-  <data name="GifError_WrongImageSize" xml:space="preserve">
-    <value>Wrong image size (should be 128x128 pixels)</value>
-  </data>
-  <data name="GifError_WrongPixelFormat" xml:space="preserve">
-    <value>Wrong pixel format (should be 8BPP indexed)</value>
+    <value>エラーはありません。</value>
   </data>
   <data name="ImportGifDialogTitle" xml:space="preserve">
-    <value>Import Logo from GIF...</value>
+    <value>GIFからのインポート...</value>
   </data>
   <data name="ImportRawDialogTitle" xml:space="preserve">
-    <value>Import Logo from Raw Logo Data...</value>
+    <value>生のロゴをインポート...</value>
   </data>
   <data name="NoFileLoaded" xml:space="preserve">
-    <value>No file loaded.</value>
+    <value>ファイルがロードされていません。</value>
   </data>
 </root>

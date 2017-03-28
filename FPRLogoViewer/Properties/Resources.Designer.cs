@@ -59,5 +59,104 @@ namespace FPRLogoViewer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Logo as PNG....
+        /// </summary>
+        internal static string ExportPngDialogTitle {
+            get {
+                return ResourceManager.GetString("ExportPngDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export Logo as Raw Logo Data....
+        /// </summary>
+        internal static string ExportRawDialogTitle {
+            get {
+                return ResourceManager.GetString("ExportRawDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to open GIF file.
+        /// </summary>
+        internal static string GifError_CantOpen {
+            get {
+                return ResourceManager.GetString("GifError_CantOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not remap color.
+        /// </summary>
+        internal static string GifError_CantRemapColor {
+            get {
+                return ResourceManager.GetString("GifError_CantRemapColor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No errors..
+        /// </summary>
+        internal static string GifError_None {
+            get {
+                return ResourceManager.GetString("GifError_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Too many colors in image (should be 64 or less).
+        /// </summary>
+        internal static string GifError_TooManyColors {
+            get {
+                return ResourceManager.GetString("GifError_TooManyColors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong image size (should be 128x128 pixels).
+        /// </summary>
+        internal static string GifError_WrongImageSize {
+            get {
+                return ResourceManager.GetString("GifError_WrongImageSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wrong pixel format (should be 8BPP indexed).
+        /// </summary>
+        internal static string GifError_WrongPixelFormat {
+            get {
+                return ResourceManager.GetString("GifError_WrongPixelFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Logo from GIF....
+        /// </summary>
+        internal static string ImportGifDialogTitle {
+            get {
+                return ResourceManager.GetString("ImportGifDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Logo from Raw Logo Data....
+        /// </summary>
+        internal static string ImportRawDialogTitle {
+            get {
+                return ResourceManager.GetString("ImportRawDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No file loaded..
+        /// </summary>
+        internal static string NoFileLoaded {
+            get {
+                return ResourceManager.GetString("NoFileLoaded", resourceCulture);
+            }
+        }
     }
 }

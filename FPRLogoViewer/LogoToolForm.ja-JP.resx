@@ -117,37 +117,116 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ExportPngDialogTitle" xml:space="preserve">
-    <value>Export Logo as PNG...</value>
+  <data name="menuItem_File_Open.Text" xml:space="preserve">
+    <value>オープン... (&amp;O)</value>
   </data>
-  <data name="ExportRawDialogTitle" xml:space="preserve">
-    <value>Export Logo as Raw Logo Data...</value>
+  <data name="menuItem_File_Save.Text" xml:space="preserve">
+    <value>セーブ (&amp;S)</value>
   </data>
-  <data name="GifError_CantOpen" xml:space="preserve">
-    <value>Unable to open GIF file</value>
+  <data name="menuItem_File_Exit.Text" xml:space="preserve">
+    <value>出口 (&amp;X)</value>
   </data>
-  <data name="GifError_CantRemapColor" xml:space="preserve">
-    <value>Could not remap color</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="menuItem_File.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
   </data>
-  <data name="GifError_None" xml:space="preserve">
-    <value>No errors.</value>
+  <data name="menuItem_File.Text" xml:space="preserve">
+    <value>ファイル (&amp;F)</value>
   </data>
-  <data name="GifError_TooManyColors" xml:space="preserve">
-    <value>Too many colors in image (should be 64 or less)</value>
+  <data name="menuItem_Import_Raw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
   </data>
-  <data name="GifError_WrongImageSize" xml:space="preserve">
-    <value>Wrong image size (should be 128x128 pixels)</value>
+  <data name="menuItem_Import_Raw.Text" xml:space="preserve">
+    <value>生のロゴをインポート... (&amp;R)</value>
   </data>
-  <data name="GifError_WrongPixelFormat" xml:space="preserve">
-    <value>Wrong pixel format (should be 8BPP indexed)</value>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 6</value>
   </data>
-  <data name="ImportGifDialogTitle" xml:space="preserve">
-    <value>Import Logo from GIF...</value>
+  <data name="menuItem_Import_Gif.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 22</value>
   </data>
-  <data name="ImportRawDialogTitle" xml:space="preserve">
-    <value>Import Logo from Raw Logo Data...</value>
+  <data name="menuItem_Import_Gif.Text" xml:space="preserve">
+    <value>&amp;GIFからのインポート...</value>
   </data>
-  <data name="NoFileLoaded" xml:space="preserve">
-    <value>No file loaded.</value>
+  <data name="menuItem_Import.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="menuItem_Import.Text" xml:space="preserve">
+    <value>インポート (&amp;I)</value>
+  </data>
+  <data name="menuItem_Export_Raw.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="menuItem_Export_Raw.Text" xml:space="preserve">
+    <value>生のロゴをエクスポート... (&amp;R)</value>
+  </data>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 6</value>
+  </data>
+  <data name="menuItem_Export_Png.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 22</value>
+  </data>
+  <data name="menuItem_Export_Png.Text" xml:space="preserve">
+    <value>&amp;PNG形式でエクスポート...</value>
+  </data>
+  <data name="menuItem_Export.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="menuItem_Export.Text" xml:space="preserve">
+    <value>エクスポート (&amp;E)</value>
+  </data>
+  <data name="menuItem_Help_About.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 22</value>
+  </data>
+  <data name="menuItem_Help_About.Text" xml:space="preserve">
+    <value>プログラム情報... (&amp;A)</value>
+  </data>
+  <data name="menuItem_Help.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 20</value>
+  </data>
+  <data name="menuItem_Help.Text" xml:space="preserve">
+    <value>ヘルプ (&amp;H)</value>
+  </data>
+  <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 17</value>
+  </data>
+  <data name="statusLabel.Text" xml:space="preserve">
+    <value>ファイルがロードされていません。</value>
+  </data>
+  <data name="importRawToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 22</value>
+  </data>
+  <data name="importRawToolStripMenuItem.Text" xml:space="preserve">
+    <value>生のロゴをインポート... (&amp;I)</value>
+  </data>
+  <data name="importGIFToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 22</value>
+  </data>
+  <data name="importGIFToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;GIFからのインポート...</value>
+  </data>
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 6</value>
+  </data>
+  <data name="exportRawLogoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 22</value>
+  </data>
+  <data name="exportRawLogoToolStripMenuItem.Text" xml:space="preserve">
+    <value>生のロゴをエクスポート... (&amp;E)</value>
+  </data>
+  <data name="exportPNGToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 22</value>
+  </data>
+  <data name="exportPNGToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;PNG形式でエクスポート...</value>
+  </data>
+  <data name="contextMenuStripLogoItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 98</value>
+  </data>
+  <data name="groupBoxLogoList.Text" xml:space="preserve">
+    <value>ロゴ</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ファイプロ・リターンズ ロゴツール</value>
   </data>
 </root>
