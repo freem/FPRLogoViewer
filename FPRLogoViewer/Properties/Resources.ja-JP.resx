@@ -132,6 +132,15 @@
   <data name="GifError_None" xml:space="preserve">
     <value>エラーはありません。</value>
   </data>
+  <data name="GifError_TooManyColors" xml:space="preserve">
+    <value>画像に色が多すぎます（予想される64色以下）</value>
+  </data>
+  <data name="GifError_WrongImageSize" xml:space="preserve">
+    <value>間違った画像サイズ（予想される128x128ピクセル）</value>
+  </data>
+  <data name="GifError_WrongPixelFormat" xml:space="preserve">
+    <value>間違ったピクセルフォーマット（予想される8BPPインデックスカラー）</value>
+  </data>
   <data name="ImportGifDialogTitle" xml:space="preserve">
     <value>GIFからのインポート...</value>
   </data>

@@ -100,14 +100,15 @@ namespace FPRLogoViewer
 		/// Return human readable string for GIF error codes.
 		/// </summary>
 		/// <param name="code">Error code</param>
-		/// <returns>Human readable string for error code</returns>
+		/// <returns>Human readable string for error code.</returns>
+		/// yes, MSDN says to use Exceptions, but I don't right now.
 		private string GifErrorCodeToString(int code) {
 			switch (code) {
 				case 0: return Properties.Resources.GifError_None;
 				case 1: return Properties.Resources.GifError_CantOpen;
-				case 2: return "Wrong pixel format (should be 8BPP indexed)";
-				case 3: return "Wrong image size (should be 128x128 pixels)";
-				case 4: return "Too many colors in image (should be 64 or less)";
+				case 2: return Properties.Resources.GifError_WrongPixelFormat;
+				case 3: return Properties.Resources.GifError_WrongImageSize;
+				case 4: return Properties.Resources.GifError_TooManyColors;
 				case 5: return Properties.Resources.GifError_CantRemapColor;
 				default: return String.Format("Undefined Error Code; yell at freem about it",code);
 			}
