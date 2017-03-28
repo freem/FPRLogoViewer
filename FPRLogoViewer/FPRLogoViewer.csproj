@@ -82,6 +82,9 @@
       <DependentUpon>Resources.ja-JP.resx</DependentUpon>
     </Compile>
     <Compile Include="SaveFile_FPR.cs" />
+    <EmbeddedResource Include="AboutBox.ja-JP.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
