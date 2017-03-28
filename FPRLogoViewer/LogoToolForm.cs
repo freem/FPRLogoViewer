@@ -139,9 +139,14 @@ namespace FPRLogoViewer
 		private void menuItem_File_Open_Click(object sender, EventArgs e) {
 			OpenFileDialog ofd = new OpenFileDialog();
 			ofd.Title = "Open Fire Pro Wrestling Returns Save File";
-			ofd.Filter = "Raw FPR Save File (e.g. BASLUS-21702, BISLPM-66082, BESLES-55041)|*.*|EMS Memory Linker Save|*.psu|All Files|*.*";
+			ofd.Filter = "EMS Memory Linker Save|*.psu|Raw FPR Save File (e.g. BASLUS-21702, BISLPM-66082, BESLES-55041)|*.*|All Files|*.*";
 			ofd.Multiselect = false;
 			if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+				// todo: yell at the user if they try opening a .ps2 file
+				if (Path.GetExtension(ofd.FileName) == ".ps2") {
+					return;
+				}
+
 				SaveFilePath = ofd.FileName;
 				CurSaveFile = new SaveFile_FPR();
 
@@ -322,20 +327,17 @@ namespace FPRLogoViewer
 		/// Update the current active logo slot.
 		/// </summary>
 		private void listViewLogos_SelectedIndexChanged(object sender, EventArgs e) {
-			CurLogoSlot = listViewLogos.SelectedIndices[0];
-			UpdateMenuItems();
-		}
-
-		private void LogoToolForm_Click(object sender, EventArgs e) {
-			CurLogoSlot = listViewLogos.SelectedIndices[0];
-			UpdateMenuItems();
+			if (listViewLogos.SelectedIndices.Count >= 1) {
+				CurLogoSlot = listViewLogos.SelectedIndices[0];
+				UpdateMenuItems();
+			}
 		}
 
 		/// <summary>
 		/// Handle the context menu on the logos properly.
 		/// </summary>
 		private void contextMenuStripLogoItem_Opening(object sender, CancelEventArgs e) {
-			if (listViewLogos.SelectedIndices[0] == -1) {
+			if (listViewLogos.SelectedIndices.Count < 1) {
 				// disable all
 				importRawToolStripMenuItem.Enabled = false;
 				importGIFToolStripMenuItem.Enabled = false;

@@ -302,7 +302,6 @@
 			this.MaximizeBox = false;
 			this.Name = "LogoToolForm";
 			this.Text = "Fire Pro Returns Logo Tool";
-			this.Click += new System.EventHandler(this.LogoToolForm_Click);
 			this.menuBar.ResumeLayout(false);
 			this.menuBar.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
