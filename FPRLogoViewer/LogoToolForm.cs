@@ -20,7 +20,7 @@ namespace FPRLogoViewer
 		enum SaveType
 		{
 			SaveType_Raw, // Raw FPR save data (e.g. BISLPM-66082, BASLUS-21702, BESLES-55041)
-			SaveType_Psu, // EMS Memory Linker save (no rewriting yet)
+			SaveType_Psu, // EMS Memory Linker save
 			Num_SaveType, // (count)
 			SaveType_Invalid // not supported
 		};
